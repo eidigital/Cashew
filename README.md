@@ -39,11 +39,9 @@ use Accolade\Cashew\InstagramOAuth;
 $instagram = new InstagramOAuth;
 $instagram->get_feed(
   $LabelforCashedFilename,
-  $InstagramUserID,
   $AccessToken
 );
 
 ```
 
 This will return the API data `json_decode()` - so you can directly access the data.
-
