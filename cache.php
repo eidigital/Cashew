@@ -4,11 +4,11 @@ namespace Accolade\Cashew;
 
 class Cache {
 
-	public $cache_folder = '_cache/'; // cache store folder
+	public $cache_folder = 'wp-content/themes/sexton/lib/instagram/_cache/'; // cache store folder
 	public $cache_time = 1 * 60 * 60; // in hour
 
 
-	public function get_the_json($label, $url) {		
+	public function get_the_json($label, $url) {
 		if($data = $this->get_cache($label)){
 			$data = json_decode($data);
 		} else {
@@ -42,7 +42,7 @@ class Cache {
 
 		return false;
 	}
-	
+
 	//regex function to standardize a filename
 	private function regex($filename){
 		if (!file_exists($this->cache_folder)) {
