@@ -4,11 +4,12 @@ namespace Accolade\Cashew;
 
 class Cache {
 
-	public $cache_folder = 'wp-content/themes/sexton/lib/instagram/_cache/'; // cache store folder
+	public $cache_folder = '_cache/'; // set cache store folder path
 	public $cache_time = 1 * 60 * 60; // in hour
 
+	public function get_the_json($path, $label, $url) {
+		$this->cache_folder = $path; // override cache store folder path
 
-	public function get_the_json($label, $url) {
 		if($data = $this->get_cache($label)){
 			$data = json_decode($data);
 		} else {
