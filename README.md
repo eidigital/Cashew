@@ -23,7 +23,7 @@ But if you are trying to get access to a private user info, You will need this.
 
 Since the API has `500` rate limit per hour, it's best to cache the result to reduce the calls. The default cache time is an hour which you can change in `cache.php`
 
-This script will store the API response in `_cache` folder with the filename that you defined as `label` using native PHP function `file_put_contents()`.
+This script will store the API response in `_cache` folder with the filename that you defined as `label` using native PHP function `file_put_contents()`. The `_cache` folder path should be explicitly set in the theme directory when initializing the class.
 
 ### Authorization flow
 
@@ -38,6 +38,7 @@ use Accolade\Cashew\InstagramOAuth;
 
 $instagram = new InstagramOAuth;
 $instagram->get_feed(
+  $PathforCacheFolder,
   $LabelforCashedFilename,
   $AccessToken
 );
